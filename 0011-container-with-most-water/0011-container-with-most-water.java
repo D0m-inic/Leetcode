@@ -6,7 +6,7 @@ class Solution {
         int r = height.length - 1;
         int max = 0;
         
-        while (l != r) {
+        while (l < r) {
             int localMax = (r-l) * Math.min(height[l], height[r]);
 
             if (localMax > max) {
