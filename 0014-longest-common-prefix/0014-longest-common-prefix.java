@@ -5,7 +5,7 @@ class Solution {
         
         for (int i=1; i<strs.length; i++) {
             if (strs[i].length() <= endIndex) {
-                endIndex = (strs[i].length() == 0) ? 0 : strs[i].length() ;
+                endIndex = strs[i].length();
             }
             while (!commonPrefix.substring(0,endIndex).equals(strs[i].substring(0,endIndex))) {
                 endIndex--;
