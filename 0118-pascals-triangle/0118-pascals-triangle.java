@@ -1,25 +1,23 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> output_arr = new ArrayList<>();
-        output_arr.add(new ArrayList<>(Arrays.asList(1)));
+        List<List<Integer>> pTriangle = new ArrayList<>();
+        pTriangle.add(new ArrayList<>(Arrays.asList(1)));
         
         for (int i=0; i<numRows-1; i++) {
-            List<Integer> temp = new ArrayList<>(output_arr.get(i));
-            temp.add(0, 0);
-            temp.add(0);
+            List<Integer> newRow = new ArrayList<>();
+            newRow.add(1);
             
             int slow = 0;
             int fast = 1;
-            List<Integer> new_input = new ArrayList<>();
             
-            while (fast < temp.size()) {
-                new_input.add(temp.get(slow) + temp.get(fast));
+            while (fast < pTriangle.get(i).size()) {
+                newRow.add(pTriangle.get(i).get(slow) + pTriangle.get(i).get(fast));
                 slow++;
                 fast++;
             }
-            output_arr.add(new_input);
+            newRow.add(1);
+            pTriangle.add(newRow);
         }
-                       
-        return output_arr;
+        return pTriangle;
     }
 }
