@@ -1,18 +1,15 @@
 int removeDuplicates(int* nums, int numsSize){
-    int correct_pos = 0;
-    int start = 0;
-    int end = 0;
-    int k = 0;
+    int L = 0;
+    int R = 0;
     
-    while (end < numsSize) {
-        while (end < numsSize && nums[start] == nums[end]) {
-            end++;
+    while (R < numsSize) {
+        while (R+1 < numsSize && nums[R] == nums[R+1]) {
+            R++;
         }
-        nums[correct_pos] = nums[start];
-        correct_pos++;
-        start = end;
-        k++;
+        nums[L] = nums[R];
+        L++;
+        R++;
     }
     
-    return k;
+    return L;
 }
