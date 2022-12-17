@@ -1,9 +1,6 @@
 class Solution {
     public String decodeString(String s) {
-        
-        System.out.println(s);
         if (s == "") { return "";}
-        if (s.length() == 1) { return s; }
         if (Character.isAlphabetic(s.charAt(0))) { return s.substring(0,1) + decodeString(s.substring(1)); }
         
         int seperate = 0;
@@ -30,7 +27,6 @@ class Solution {
                 break;
             }
         }
-        System.out.println("HI" + s.substring(end+1));
         String restOfString = decodeString(s.substring(end+1));
         String repeatedString = decodeString(s.substring(start,end));
         String result = "";
