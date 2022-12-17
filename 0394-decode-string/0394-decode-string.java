@@ -9,18 +9,18 @@ class Solution {
         }
         int n = Integer.parseInt(s.substring(0,seperate));
         int start=seperate+1;    
-        int end = 0;   
-        Stack<Character> stack = new Stack<>();
+        int end = 0;
+        int numBrackets =0;
         
         for (int i=seperate; i<s.length(); i++) {
             char c = s.charAt(i);
             if (c == '[') {
-                stack.push(c);
+                numBrackets++;
             } else if (c == ']') {
-                stack.pop();
+                numBrackets--;
             }
             
-            if (stack.isEmpty()) {
+            if (numBrackets == 0) {
                 end = i;
                 break;
             }
