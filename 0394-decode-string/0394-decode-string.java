@@ -16,9 +16,7 @@ class Solution {
             char c = s.charAt(i);
             if (c == '[') {
                 stack.push(c);
-            }
-            
-            if (c == ']') {
+            } else if (c == ']') {
                 stack.pop();
             }
             
