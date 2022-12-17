@@ -2,8 +2,14 @@ class Solution {
     public boolean PredictTheWinner(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
+        int p2 = 0;
+        for (int i=0; i<=end; i++) {
+            p2 += nums[i];
+        }
+        int p1 = PredictTheWinnerHelper(nums,start,end,true);
+        p2 -= p1;
         
-        return PredictTheWinnerHelper(nums,start,end,true) >= PredictTheWinnerHelper(nums,start,end,false);
+        return p1 >= p2;
     }
     
     public int PredictTheWinnerHelper(int[] nums, int start, int end, boolean turn) {
