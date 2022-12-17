@@ -2,23 +2,19 @@ import java.lang.Math;
 
 class Solution {
     public int maxArea(int[] height) {
-        int l = 0;
-        int r = height.length - 1;
+        int L = 0;
+        int R = height.length - 1;
         int max = 0;
-        
-        while (l < r) {
-            int localMax = (r-l) * Math.min(height[l], height[r]);
-
-            if (localMax > max) {
-                max = localMax;
-            }
-            
-            if (height[l] < height[r]) {
-                l+=1;
-            } else {
-                r-=1;
-            }
+        while (R > L) {
+            int currMax = (R-L) * Math.min(height[R], height[L]);
+            if (currMax > max)
+                max = currMax;
+            if (height[R] < height[L])
+                R--;
+            else
+                L++;
         }
+        
         return max;
     }
 }
