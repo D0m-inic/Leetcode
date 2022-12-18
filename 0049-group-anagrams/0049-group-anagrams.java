@@ -12,12 +12,9 @@ class Solution {
             for (int j=0 ; j<str.length(); j++) {
                 char c = str.charAt(j);
                 stringKey.set(c-'a', stringKey.get(c-'a') + 1);
-                
-                System.out.println(stringKey);
             }
             
             if (map.containsKey(stringKey)) {
-                System.out.println("DEBUG");
                 List<String> newValue = map.get(stringKey);
                 newValue.add(str);
                 map.put(stringKey, newValue);
