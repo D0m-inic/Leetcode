@@ -4,17 +4,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        nums.sort()
-        prevNum = 0
-        firstVal = True
+        hashset = set()
         for n in nums:
-            if firstVal:
-                prevNum = n
-                firstVal = False
-                continue
-            if prevNum == n:
+            if n in hashset:
                 return True
-            prevNum = n
+            hashset.add(n)
         return False
             
         
