@@ -3,8 +3,7 @@ class Solution:
         for c in s:
             if not c.isalnum():
                 s = s.replace(c, "",1)
-            else:
-                s = s.replace(c, c.lower(),1)
+        s = s.lower()
         
         start = 0
         end = len(s) - 1
