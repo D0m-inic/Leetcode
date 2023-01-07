@@ -5,10 +5,7 @@ class Solution:
         
         while r > l:
             if (target == numbers[l] + numbers[r]):
-                ans = []
-                ans.append(l+1)
-                ans.append(r+1)
-                return ans
+                return [l+1,r+1]
             
             if (target > numbers[l] + numbers[r]):
                 l+=1
