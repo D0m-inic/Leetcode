@@ -17,8 +17,7 @@ class Solution:
             
             if self.calcEatingSpeed(piles, mid) <= h:
                 r = mid - 1
-                if mid < currentMin:
-                    currentMin = mid
+                currentMin = min(currentMin, mid)
             else:
                 l = mid + 1
         
