@@ -10,7 +10,7 @@ class Solution:
         cursor = head
         carry = 0
         
-        while l1 or l2:
+        while l1 or l2 or carry:
             l1Val = l1.val if l1 else 0
             l2Val = l2.val if l2 else 0
             newVal = (l1Val + l2Val + carry) % 10
@@ -20,10 +20,6 @@ class Solution:
             cursor = newNode
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
-        
-        if carry:
-            newNode = ListNode(carry)
-            cursor.next = newNode
         
         return head.next
             
